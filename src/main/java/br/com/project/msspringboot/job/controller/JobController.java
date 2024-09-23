@@ -27,4 +27,14 @@ public class JobController {
         return "Job saved successfully!";
     }
 
+    @GetMapping("/{id}")
+    public Job getJobById(@PathVariable Long id) {
+       Job job = jobService.findById(id);
+
+       if (job != null)
+           return job;
+
+       return new Job(1L, "Job not found", "New Job", "2000", "3000", "London");
+    }
+
 }

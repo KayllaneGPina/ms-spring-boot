@@ -7,4 +7,5 @@ import java.util.List;
 public interface JobService {
     List<Job> findAll();
     void createdJob(Job job);
+    Job findById(Long id);
 }
